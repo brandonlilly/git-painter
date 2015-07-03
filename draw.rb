@@ -1,6 +1,7 @@
 require 'fileutils'
 require 'rugged'
 require 'json'
+require 'titleize'
 require_relative 'painter'
 
 base_repo = 'base_repo'
@@ -19,7 +20,7 @@ pattern = File.read('pattern.txt').split("\n").map {|row| row.split('')}
 color_file = File.read('colors.json')
 color_data = JSON.parse(color_file)
 
-colors = color_data.map(&:first).map(&:capitalize)
+colors = color_data.map(&:first).map(&:titleize)
 
 phrases = [
   "Nice layer of _",
