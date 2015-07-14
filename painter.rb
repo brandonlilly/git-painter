@@ -9,11 +9,11 @@ class Painter
 
   end
 
-  def self.first_monday
+  def self.first_sunday
     days = 24*60*60
-    monday = Time.now - 52*7*days
-    monday += monday.monday? ? 0 : (7 - monday.wday) * days
-    monday
+    sunday = Time.now - 53*7*days
+    sunday += sunday.sunday? ? 0 : (7 - sunday.wday) * days
+    sunday
   end
 
   def commit(time:, message:, content:)

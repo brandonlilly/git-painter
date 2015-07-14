@@ -34,7 +34,7 @@ phrases = [
   "Smidgen of _",
 ]
 
-first_monday = Painter.first_monday
+first_sunday = Painter.first_sunday
 
 weights = { A: 1, B: 3, }
 
@@ -42,7 +42,7 @@ pattern.each_with_index do |row, wday|
   row.each_with_index do |char, weeks|
     next unless weight = weights[char.to_sym]
 
-    day = first_monday + (wday + weeks*7) * 24*60*60
+    day = first_sunday + (wday + weeks*7) * 24*60*60
     weight.times do
       message = phrases.sample.sub('_', colors.sample)
       painter.commit(time: day, message: message, content: "This is a paint job.")
