@@ -36,7 +36,7 @@ phrases = [
 
 first_sunday = Painter.first_sunday
 
-weights = { A: 1, B: 3, }
+weights = { A: 1, B: 4, }
 
 pattern.each_with_index do |row, wday|
   row.each_with_index do |char, weeks|
